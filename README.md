@@ -1,4 +1,4 @@
-# 🏝️ Dynamic Island for Windows
+# 🏝️ Dynamic Island for Windows - Przetłumaczony na język Polski
 
 A smooth, interactive overlay for your desktop, inspired by Apple's Dynamic Island. It brings a sleek media widget, notifications, and system alerts to Windows without slowing down your PC.
 
