@@ -1,9 +1,9 @@
 // ==WindhawkMod==
-// @id              dynamic-island-for-windows
-// @name            Dynamic Island for Windows
+// @id              dynamic-island-for-windows-polski
+// @name            Dynamic Island for Windows - Przetłumaczony na język Polski
 // @description     A living, breathing pill overlay inspired by iPhone's Dynamic Island. Reacts to media, downloads, clipboard, battery, and more.
-// @version         1.3.1
-// @author          Himanshu
+// @version         1.3.1.PL
+// @author          Himanshu, KosmoTheProtogen
 // @github          https://github.com/devcode90
 // @include         windhawk.exe
 // @compilerOptions -lole32 -loleaut32 -lshcore -ld2d1 -ldwrite -ldwmapi -lgdi32 -luser32 -lshell32 -lruntimeobject -lwindowscodecs -lavrt -lsetupapi -lwinhttp -lpdh -lwinmm
@@ -12,7 +12,9 @@
 
 // ==WindhawkModReadme==
 /*
-# Dynamic Island for Windows
+# Dynamic Island dla systemu Windows
+
+(Readme nie tłumaczę bo na razie zbyt leniwy jestem, w razie błędów tłumaczenia lub literówek proszę pisać na discordzie @KosmoTheProtogen.)
 
 A fluid, living overlay inspired by Apple's Dynamic Island, bringing a beautiful, highly-responsive UI to your Windows desktop. Built natively with hardware-accelerated Direct2D rendering for a buttery-smooth 60 FPS experience.
 
@@ -92,51 +94,51 @@ We love community contributions! To ensure high-quality updates, please follow t
 /*
 - Appearance:
   - Position: top-center
-    $name: Position
-    $description: Where the island should appear on your screen.
+    $name: Pozycja
+    $description: Pozycja gdzie Dynamic Island powinien się znajdować na ekranie.
     $options:
-      - top-center: Top Center
-      - top-left: Top Left
-      - top-right: Top Right
-      - bottom-center: Bottom Center
-      - bottom-left: Bottom Left
-      - bottom-right: Bottom Right
+      - top-center: Góra, Wyśrodkowany
+      - top-left: Góra, Lewo
+      - top-right: Góra, Prawo
+      - bottom-center: Dół, Wyśrodkowany
+      - bottom-left: Dół, Lewo
+      - bottom-right: Dół, Prawo
   - TargetMonitor: primary
-    $name: Target Monitor
-    $description: Select the screen to display the island. If a display isn't found, it safely falls back to the Primary Monitor.(Extra Displays are given even if they don't exist because windhawk settings are static)
+    $name: Wyświetlacz docelowy
+    $description: Wybierz ekran na którym ma być wyświetlany Dynamiczna wyspa. Jeśli wyświetlacz jest niewykrywany, to jako mechanizm bezpieczeństwa wyświetla się zpowrotem na głównym wyświetlaczu. (Są do wyboru dodatkowe monitory ze względu na to, że mody w Windhawk'u są statyczne.)
     $options:
-      - 'primary': Primary Monitor
-      - '1': Display 1
-      - '2': Display 2
-      - '3': Display 3
-      - '4': Display 4
-      - '5': Display 5
-      - 'follow': Follow Mouse (Active Monitor)
+      - 'primary': Domyślny wyświetlacz
+      - '1': Wyświetlacz 1
+      - '2': Wyświetlacz 2
+      - '3': Wyświetlacz 3
+      - '4': Wyświetlacz 4
+      - '5': Wyświetlacz 5
+      - 'follow': Podąrzaj tam gdzie jest mysz (Aktywny Wyświetlacz)
   - OffsetX: 0
     $name: Offset X
-    $description: Adjust the horizontal position (in pixels). Positive values move it right, negative values move it left.
+    $description: Dostosuj pozycje poziomą (w pikselach). Wartości dodatnie poruszają wyspę w prawo, a negatywne w lewo.
   - OffsetY: 0
     $name: Offset Y
-    $description: Adjust the vertical position (in pixels). Positive values move it down, negative values move it up. Applies to every state unless the separate expanded offset below is turned on, in which case this becomes the collapsed/idle offset.
+    $description: Dostosuj pozycje pionową (w pikselach). Zastosowuje się do każdego stanu, chyba że oddzielny offset niżej jest włączony. Wtedy ta wartość zamienia się w offset zapadnięcia/idle'u wyspy.
   - SeparateExpandedOffsetY: false
-    $name: Use a separate Offset Y when expanded
-    $description: Lets the island sit at one height while collapsed and a different one while expanded. Useful for tucking the idle pill up near the screen edge while keeping the expanded dashboard somewhere comfortable to interact with.
+    $name: Użyj oddzielnego Offsetu Y kiedy roztrzeżony
+    $description: Pozwala wyspie siedzieć na jednej wysokośći, a na innej wysokości kiedy wysunięta. Przydatne gdy wyspa jest w trybie idle blisko rogu ekranu, zachowująć wysuwającą się część wyspy wygodnie gdzieś do interacji z.
   - OffsetYExpanded: 0
-    $name: Offset Y (expanded)
-    $description: Vertical position in pixels while the island is expanded. Only used when the separate expanded offset above is on. The island eases between this and Offset Y as it expands and collapses, so the two never snap.
+    $name: Offset Y (roztrzeżony)
+    $description: Pozioma pozycja w pikselach gdy wyspa jest wysunięta. Wartość ta powinna być tylko używana gdy powyższa opcja jest włączona. The island eases between this and Offset Y as it expands and collapses, so the two never snap.
   - BorderMergedMode: false
-    $name: Border-Merged Mode
-    $description: Attach the island flush to the top edge of the monitor without a floating gap.
+    $name: Tryb złączonego brzegu
+    $description: Przpnij wyspę płasko z górnym rogiem ekranu bez dziury w rogu
   - ShapeStyle: default
-    $name: Island Shape Style
-    $description: Change the overall shape of the island (Pill, Windows 11, or macOS Notch).
+    $name: Styl krztałtu wyspy
+    $description: Zmień ogólny krztałt wyspy (Pill, Windows 11, lub notch z MacOS'a)
     $options:
-      - default: Default (Apple Pill)
-      - w11: Windows 11 (Rounded Box)
-      - notch: macOS Notch (Top Edge Flush)
+      - default: Domyślny (Apple Pill)
+      - w11: Windows 11 (Zaokrąglony prostokąt)
+      - notch: macOS Notch (wyspa złączona z górą ekranu)
   - SizeScale: '1.0'
-    $name: Size scale
-    $description: Makes the entire island and its contents larger or smaller.
+    $name: Skala rozmiaru
+    $description: Zmienia rozmiar całej wyspy oraz zawartośći jej.
     $options:
       - '0.8': 0.8x
       - '1.0': 1.0x
@@ -146,86 +148,86 @@ We love community contributions! To ensure high-quality updates, please follow t
       - '2.0': 2.0x
       - '2.5': 2.5x
   - AutoDpiScale: true
-    $name: Auto DPI scaling
-    $description: Automatically scales the island to match your monitor's DPI. Recommended for 4K screens.
-  $name: Appearance & Position
+    $name: Automatyczne skalowanie DPI
+    $description: Automatycznie skaluje wyspe by dopasowała się do DPI ekranu. Rekomendowane dla użytkowników korzystających z wyświetlaczy(a) w rozdzielczości 4K.
+  $name: Wygląd i pozycja
 - Behavior:
   - AlwaysOnTop: true
-    $name: Always on top
-    $description: Keeps the island above all other windows. Turn this off if it blocks other apps.
+    $name: Zawsze na wierzchu
+    $description: Wyświetla wyspę zawsze nad wyświetlanymi oknami. Wyłącz tą funkcje jeśli blokuje inne aplikacje.
   - ExpandOnHover: true
-    $name: Expand on hover
-    $description: Expand the island automatically when hovered. If disabled, click to expand.
+    $name: Rozwiń przy najechaniu na wyspę
+    $description: Opcja rozwinięcia wyspy jeśli kursor jest najechany na nią. Gdy wyłączona, naciśnij głównym przyciskiem myszy by rozwinąć.
   - AutoHideIdleSeconds: '0'
-    $name: Auto-hide island (all states)
-    $description: Hide the island (including idle, media, and other states) after this many seconds of inactivity. 0 to disable.
+    $name: Automatyczne ukrywanie wyspy (w każdym stanie Ameryki)
+    $description: Automatycznie ukryj wyspę (w trybie idle, media oraz innymi stanami Ameryki) po ilości wybranych sekund od nieaktywności. (Wartość 0 wyłącza tą opcje)
     $options:
-      - '-1': Hide instantly
-      - '0': Never hide (default)
-      - '5': Hide after 5 seconds
-      - '10': Hide after 10 seconds
-      - '30': Hide after 30 seconds
-      - '60': Hide after 60 seconds
+      - '-1': Zchowaj odrazu
+      - '0': Nigdy nie chowaj (Domyślne)
+      - '5': Zchowaj po 5 sekundach
+      - '10': Zchowaj po 10 sekundach
+      - '30': Zchowaj po 30 sekundach
+      - '60': Zchowaj po 60 sekundach
   - AutoHideFullscreen: true
-    $name: Hide on full screen
-    $description: Automatically hide the island when playing a video or app in full screen mode.
+    $name: Zchowaj gdy w pełnym ekranie
+    $description: Automatycznie ukryj wyspę gdy odtwarzasz film lub masz aplikacje w trybie pełgeno ekranu.
   - UnhideOnHover: true
-    $name: Unhide on hover
-    $description: Allow the hidden island to reappear when you hover your mouse over it.
-  $name: Behavior & Visibility
+    $name: Odkryj przy najechaniu
+    $description: Pozwól zchowanej wyspie znów się pojawić gdy najedziesz na nią kursorem.
+  $name: Zachowanie i widoczność
 - Animations:
   - TargetFPS: auto
-    $name: Refresh rate / FPS
-    $description: Set the animation frame rate. Choose Auto to dynamically match your active monitor's refresh rate (up to 360Hz/500Hz), or select a fixed FPS.
+    $name: Częstotliwość odświeżania / FPS
+    $description: Wybierz frame rate animacji wyspy. Wybierz Auto by dynamicznie dostosować się do częstotliwości odświeżania wyświetlacza. (Do 360Hz/500Hz), lub wybierz liczbę klatek na sekunde ręcznie.
     $options:
-      - auto: Auto (Match Monitor Refresh Rate)
-      - '60': 60 FPS (Eco / Standard)
+      - auto: Auto (Dostosuj się do częstotliwości odświeżania wyświetlacza)
+      - '60': 60 FPS (Eco / Standarowy)
       - '90': 90 FPS
       - '120': 120 FPS
       - '144': 144 FPS
       - '165': 165 FPS
       - '240': 240 FPS
-      - '360': 360 FPS (Ultra Smooth)
-      - '500': 500 FPS (Maximum / Uncapped)
+      - '360': 360 FPS (Ultra płynny)
+      - '500': 500 FPS (Max / Uncapped)
   - AnimationStyle: default
-    $name: Animation bounciness / style
-    $description: Control the spring physics and feel of the animation.
+    $name: Styl animacji oraz sprężystość
+    $description: Zmień ustawienia fizyki sprężystości animacji
     $options:
-      - smooth: Smooth (No bounciness / Critically damped)
-      - default: Default (Balanced Apple-like spring)
-      - bouncy: Bouncy (Dynamic elastic spring)
-      - snappy: Snappy (High stiffness, quick settle)
+      - smooth: Płynny (Bez sprężystości)
+      - default: Domyślny (Wybalansowana sprężystość podobna do Apple'a)
+      - bouncy: Skoczny (Elastyczna dynamiczna sprężywność)
+      - snappy: Sztywy jak drewno (Wysoki poziom sztywności)
   - AnimationSpeed: normal
-    $name: Animation speed
-    $description: How fast the island expands and collapses.
+    $name: Prędkość animacji
+    $description: Jak szybko ma się wysuwać i chować wyspa
     $options:
-      - very-slow: Very Slow (0.5x)
-      - slow: Slow (0.75x)
-      - normal: Normal (1.0x)
-      - fast: Fast (1.35x)
-      - very-fast: Very Fast (1.65x)
-      - ultra-fast: Ultra Fast (2.0x)
-  $name: Animations & Performance
+      - very-slow: Baaardzo wolno (0.5x)
+      - slow: Wolno (0.75x)
+      - normal: Normalny (1.0x)
+      - fast: Szybki (1.35x)
+      - very-fast: Bardzo szybki (1.65x)
+      - ultra-fast: Njuuuuu (2.0x)
+  $name: Animacje i wydajność
 - Themes:
   - ThemePreset: obsidian
-    $name: Theme preset
-    $description: Select a curated color theme, or choose Custom to use your own hex colors below.
+    $name: Preset'y motywów
+    $description: Wybierz zkonfigurowany motyw kolorów, lub wybierz Niestandardowy by użyć własnych wartości hex kolorów poniżej.
     $options:
-      - obsidian: Obsidian - true black (Default)
-      - graphite: Graphite - neutral Windows 11 dark
-      - slate: Slate - cool blue-grey
-      - nord: Nord - the Nord palette
-      - evergreen: Evergreen - deep green
-      - espresso: Espresso - warm brown
+      - obsidian: Obsidian - prawdziwa czerń (Default)
+      - graphite: Graphite - neutralny ciemność Windowsa 11
+      - slate: Slate - fajny niebiesko-szary
+      - nord: Nord - Paleta Nord
+      - evergreen: Evergreen - Głęboki shrek
+      - espresso: Espresso - Ciepłe błoto
       - plum: Plum - muted mauve
-      - porcelain: Porcelain - light theme
-      - custom: Custom Colors (Use Hex Below)
+      - porcelain: Porcelain - jasny motyw masochistów
+      - custom: Kolor niestandardowy (Użyj wartości Hex poniżej)
   - PillOpacity: 96
-    $name: Pill transparency
-    $description: 35 to 100. Lower values make the island more see-through.
+    $name: Przezroczystość Pill'a
+    $description: od 35 do 100. Niższe wartości powodują że wyspa jest bardziej przezroczysta.
   - TintIntensity: 72
-    $name: Background tint intensity
-    $description: 0 to 100. Controls how dark the background tint behind the island is.
+    $name: Poziom przyciemnienia tła
+    $description: od 0 do 100. Zmienia ciemność tła wykończenia zza wyspy.
   - BackdropMaterial: none
     $name: Backdrop material (real Windows blur)
     $description: Paints genuine Windows blur or acrylic behind the island so your desktop and windows show through it. Acrylic adds the frosted noise texture Windows uses for its own surfaces. Requires Windows 10 1803 or newer; on unsupported builds the island simply stays opaque. When this is on, use Backdrop fill opacity below to control how much of the blur comes through.
@@ -385,6 +387,7 @@ We love community contributions! To ensure high-quality updates, please follow t
       - zh: 简体中文 (Simplified Chinese)
       - ja: 日本語 (Japanese)
       - ko: 한국어 (Korean)
+      - pl: Polski (Polish)
   - ClockFormat: system
     $name: Clock format
     $description: Choose 12-hour or 24-hour time, or follow your Windows locale setting.
@@ -1371,6 +1374,7 @@ enum class UiLanguage {
     ChineseSimplified,
     Japanese,
     Korean,
+    Polish,
     Count,
 };
 
@@ -1385,6 +1389,7 @@ UiLanguage LanguageFromTag(std::wstring_view tag) {
         {L"ru", UiLanguage::Russian},   {L"tr", UiLanguage::Turkish},
         {L"hi", UiLanguage::Hindi},     {L"zh", UiLanguage::ChineseSimplified},
         {L"ja", UiLanguage::Japanese},  {L"ko", UiLanguage::Korean},
+        {L"pl", UiLanguage::Polish}
     };
     if (tag.size() < 2) {
         return UiLanguage::English;
@@ -1465,38 +1470,38 @@ const wchar_t* Loc(const wchar_t* english) {
         const wchar_t* text[static_cast<size_t>(UiLanguage::Count)];
     };
 
-    // Order: en, fr, es, de, pt, it, ru, tr, hi, zh, ja, ko
+    // Order: en, fr, es, de, pt, it, ru, tr, hi, zh, ja, ko, pl
     static const Row kRows[] = {
-        {L"Media", {nullptr, L"Média", L"Multimedia", L"Medien", L"Mídia", L"Media", L"Медиа", L"Medya", L"मीडिया", L"媒体", L"メディア", L"미디어"}},
-        {L"Calendar", {nullptr, L"Calendrier", L"Calendario", L"Kalender", L"Calendário", L"Calendario", L"Календарь", L"Takvim", L"कैलेंडर", L"日历", L"カレンダー", L"캘린더"}},
-        {L"Weather", {nullptr, L"Météo", L"Tiempo", L"Wetter", L"Tempo", L"Meteo", L"Погода", L"Hava", L"मौसम", L"天气", L"天気", L"날씨"}},
-        {L"Hardware Monitor", {nullptr, L"Moniteur matériel", L"Monitor de hardware", L"Hardware-Monitor", L"Monitor de hardware", L"Monitor hardware", L"Монитор системы", L"Donanım İzleme", L"हार्डवेयर मॉनिटर", L"硬件监视器", L"ハードウェア モニター", L"하드웨어 모니터"}},
-        {L"File Tray", {nullptr, L"Bac à fichiers", L"Bandeja de archivos", L"Dateiablage", L"Bandeja de arquivos", L"Vassoio file", L"Файлы", L"Dosya Tepsisi", L"फ़ाइल ट्रे", L"文件托盘", L"ファイル トレイ", L"파일 트레이"}},
-        {L"Bluetooth", {nullptr, L"Bluetooth", L"Bluetooth", L"Bluetooth", L"Bluetooth", L"Bluetooth", L"Bluetooth", L"Bluetooth", L"ब्लूटूथ", L"蓝牙", L"Bluetooth", L"블루투스"}},
-        {L"Copied", {nullptr, L"Copié", L"Copiado", L"Kopiert", L"Copiado", L"Copiato", L"Скопировано", L"Kopyalandı", L"कॉपी किया गया", L"已复制", L"コピーしました", L"복사됨"}},
-        {L"Volume", {nullptr, L"Volume", L"Volumen", L"Lautstärke", L"Volume", L"Volume", L"Громкость", L"Ses", L"वॉल्यूम", L"音量", L"音量", L"볼륨"}},
-        {L"Muted", {nullptr, L"Muet", L"Silenciado", L"Stumm", L"Sem som", L"Muto", L"Без звука", L"Sessiz", L"म्यूट", L"已静音", L"ミュート", L"음소거"}},
-        {L"Low Battery", {nullptr, L"Batterie faible", L"Batería baja", L"Akku schwach", L"Bateria fraca", L"Batteria scarica", L"Батарея разряжена", L"Pil Az", L"बैटरी कम", L"电量低", L"バッテリー残量低下", L"배터리 부족"}},
-        {L"Charging", {nullptr, L"En charge", L"Cargando", L"Wird geladen", L"Carregando", L"In carica", L"Зарядка", L"Şarj oluyor", L"चार्ज हो रहा है", L"正在充电", L"充電中", L"충전 중"}},
-        {L"Connected", {nullptr, L"Connecté", L"Conectado", L"Verbunden", L"Conectado", L"Connesso", L"Подключено", L"Bağlandı", L"कनेक्ट किया गया", L"已连接", L"接続済み", L"연결됨"}},
-        {L"Disconnected", {nullptr, L"Déconnecté", L"Desconectado", L"Getrennt", L"Desconectado", L"Disconnesso", L"Отключено", L"Bağlantı kesildi", L"डिस्कनेक्ट किया गया", L"已断开", L"切断されました", L"연결 끊김"}},
-        {L"Caps Lock", {nullptr, L"Verr. Maj", L"Bloq Mayús", L"Feststelltaste", L"Caps Lock", L"Blocco maiuscole", L"Caps Lock", L"Caps Lock", L"कैप्स लॉक", L"大写锁定", L"Caps Lock", L"Caps Lock"}},
-        {L"Num Lock", {nullptr, L"Verr. Num", L"Bloq Num", L"Num-Taste", L"Num Lock", L"Blocco num", L"Num Lock", L"Num Lock", L"नम लॉक", L"数字锁定", L"Num Lock", L"Num Lock"}},
-        {L"On", {nullptr, L"Activé", L"Activado", L"Ein", L"Ligado", L"Attivo", L"Вкл", L"Açık", L"चालू", L"开", L"オン", L"켜짐"}},
-        {L"Off", {nullptr, L"Désactivé", L"Desactivado", L"Aus", L"Desligado", L"Disattivo", L"Выкл", L"Kapalı", L"बंद", L"关", L"オフ", L"꺼짐"}},
-        {L"Do Not Disturb", {nullptr, L"Ne pas déranger", L"No molestar", L"Nicht stören", L"Não perturbe", L"Non disturbare", L"Не беспокоить", L"Rahatsız Etme", L"परेशान न करें", L"专注助手", L"応答不可", L"방해 금지"}},
-        {L"Focus", {nullptr, L"Concentration", L"Concentración", L"Fokus", L"Foco", L"Concentrazione", L"Фокус", L"Odak", L"फ़ोकस", L"专注", L"集中", L"집중"}},
-        {L"Break", {nullptr, L"Pause", L"Descanso", L"Pause", L"Pausa", L"Pausa", L"Перерыв", L"Mola", L"विराम", L"休息", L"休憩", L"휴식"}},
-        {L"Unknown", {nullptr, L"Inconnu", L"Desconocido", L"Unbekannt", L"Desconhecido", L"Sconosciuto", L"Неизвестно", L"Bilinmiyor", L"अज्ञात", L"未知", L"不明", L"알 수 없음"}},
-        {L"Loading...", {nullptr, L"Chargement...", L"Cargando...", L"Wird geladen...", L"Carregando...", L"Caricamento...", L"Загрузка...", L"Yükleniyor...", L"लोड हो रहा है...", L"加载中...", L"読み込み中...", L"불러오는 중..."}},
-        {L"Locating...", {nullptr, L"Localisation...", L"Ubicando...", L"Standort...", L"Localizando...", L"Localizzazione...", L"Определение...", L"Konum...", L"स्थान...", L"定位中...", L"位置情報...", L"위치 확인 중..."}},
-        {L"Wind", {nullptr, L"Vent", L"Viento", L"Wind", L"Vento", L"Vento", L"Ветер", L"Rüzgar", L"हवा", L"风速", L"風", L"바람"}},
-        {L"Feels Like", {nullptr, L"Ressenti", L"Sensación", L"Gefühlt", L"Sensação", L"Percepita", L"Ощущается", L"Hissedilen", L"महसूस", L"体感", L"体感", L"체감"}},
-        {L"Humidity", {nullptr, L"Humidité", L"Humedad", L"Luftfeuchte", L"Umidade", L"Umidità", L"Влажность", L"Nem", L"नमी", L"湿度", L"湿度", L"습도"}},
-        {L"Drag files here", {nullptr, L"Déposez des fichiers ici", L"Arrastra archivos aquí", L"Dateien hierher ziehen", L"Arraste arquivos aqui", L"Trascina i file qui", L"Перетащите файлы сюда", L"Dosyaları buraya sürükleyin", L"फ़ाइलें यहाँ खींचें", L"将文件拖到此处", L"ここにファイルをドラッグ", L"여기에 파일을 끌어다 놓으세요"}},
-        {L"No devices", {nullptr, L"Aucun appareil", L"Sin dispositivos", L"Keine Geräte", L"Nenhum dispositivo", L"Nessun dispositivo", L"Нет устройств", L"Cihaz yok", L"कोई डिवाइस नहीं", L"无设备", L"デバイスなし", L"장치 없음"}},
-        {L"item", {nullptr, L"élément", L"elemento", L"Element", L"item", L"elemento", L"элемент", L"öğe", L"आइटम", L"项", L"項目", L"항목"}},
-        {L"items", {nullptr, L"éléments", L"elementos", L"Elemente", L"itens", L"elementi", L"элементов", L"öğe", L"आइटम", L"项", L"項目", L"항목"}},
+        {L"Media", {nullptr, L"Média", L"Multimedia", L"Medien", L"Mídia", L"Media", L"Медиа", L"Medya", L"मीडिया", L"媒体", L"メディア", L"미디어", L"Multimedia"}},
+        {L"Calendar", {nullptr, L"Calendrier", L"Calendario", L"Kalender", L"Calendário", L"Calendario", L"Календарь", L"Takvim", L"कैलेंडर", L"日历", L"カレンダー", L"캘린더", L"Kalendarz"}},
+        {L"Weather", {nullptr, L"Météo", L"Tiempo", L"Wetter", L"Tempo", L"Meteo", L"Погода", L"Hava", L"मौसम", L"天气", L"天気", L"날씨", L"Pogoda"}},
+        {L"Hardware Monitor", {nullptr, L"Moniteur matériel", L"Monitor de hardware", L"Hardware-Monitor", L"Monitor de hardware", L"Monitor hardware", L"Монитор системы", L"Donanım İzleme", L"हार्डवेयर मॉनिटर", L"硬件监视器", L"ハードウェア モニター", L"하드웨어 모니터", L"Monitor sprzętu"}},
+        {L"File Tray", {nullptr, L"Bac à fichiers", L"Bandeja de archivos", L"Dateiablage", L"Bandeja de arquivos", L"Vassoio file", L"Файлы", L"Dosya Tepsisi", L"फ़ाइल ट्रे", L"文件托盘", L"ファイル トレイ", L"파일 트레이", L"Zasobnik plików"}},
+        {L"Bluetooth", {nullptr, L"Bluetooth", L"Bluetooth", L"Bluetooth", L"Bluetooth", L"Bluetooth", L"Bluetooth", L"Bluetooth", L"ब्लूटूथ", L"蓝牙", L"Bluetooth", L"블루투스", L"Bluetooth"}},
+        {L"Copied", {nullptr, L"Copié", L"Copiado", L"Kopiert", L"Copiado", L"Copiato", L"Скопировано", L"Kopyalandı", L"कॉपी किया गया", L"已复制", L"コピーしました", L"복사됨", L"Zkopiowano"}},
+        {L"Volume", {nullptr, L"Volume", L"Volumen", L"Lautstärke", L"Volume", L"Volume", L"Громкость", L"Ses", L"वॉल्यूम", L"音量", L"音量", L"볼륨", L"Głośność"}},
+        {L"Muted", {nullptr, L"Muet", L"Silenciado", L"Stumm", L"Sem som", L"Muto", L"Без звука", L"Sessiz", L"म्यूट", L"已静音", L"ミュート", L"음소거", L"Wyciszono"}},
+        {L"Low Battery", {nullptr, L"Batterie faible", L"Batería baja", L"Akku schwach", L"Bateria fraca", L"Batteria scarica", L"Батарея разряжена", L"Pil Az", L"बैटरी कम", L"电量低", L"バッテリー残量低下", L"배터리 부족", L"Niski poziom baterii"}},
+        {L"Charging", {nullptr, L"En charge", L"Cargando", L"Wird geladen", L"Carregando", L"In carica", L"Зарядка", L"Şarj oluyor", L"चार्ज हो रहा है", L"正在充电", L"充電中", L"충전 중", L"Ładowanie"}},
+        {L"Connected", {nullptr, L"Connecté", L"Conectado", L"Verbunden", L"Conectado", L"Connesso", L"Подключено", L"Bağlandı", L"कनेक्ट किया गया", L"已连接", L"接続済み", L"연결됨", L"Podłączono"}},
+        {L"Disconnected", {nullptr, L"Déconnecté", L"Desconectado", L"Getrennt", L"Desconectado", L"Disconnesso", L"Отключено", L"Bağlantı kesildi", L"डिस्कनेक्ट किया गया", L"已断开", L"切断されました", L"연결 끊김", L"Rozłączono"}},
+        {L"Caps Lock", {nullptr, L"Verr. Maj", L"Bloq Mayús", L"Feststelltaste", L"Caps Lock", L"Blocco maiuscole", L"Caps Lock", L"Caps Lock", L"कैप्स लॉक", L"大写锁定", L"Caps Lock", L"Caps Lock", L"Caps Lock"}},
+        {L"Num Lock", {nullptr, L"Verr. Num", L"Bloq Num", L"Num-Taste", L"Num Lock", L"Blocco num", L"Num Lock", L"Num Lock", L"नम लॉक", L"数字锁定", L"Num Lock", L"Num Lock", L"Num Lock"}},
+        {L"On", {nullptr, L"Activé", L"Activado", L"Ein", L"Ligado", L"Attivo", L"Вкл", L"Açık", L"चालू", L"开", L"オン", L"켜짐", L"Włączony"}},
+        {L"Off", {nullptr, L"Désactivé", L"Desactivado", L"Aus", L"Desligado", L"Disattivo", L"Выкл", L"Kapalı", L"बंद", L"关", L"オフ", L"꺼짐", L"Wyłączony"}},
+        {L"Do Not Disturb", {nullptr, L"Ne pas déranger", L"No molestar", L"Nicht stören", L"Não perturbe", L"Non disturbare", L"Не беспокоить", L"Rahatsız Etme", L"परेशान न करें", L"专注助手", L"応答不可", L"방해 금지", L"Nie Przeszkadzać"}},
+        {L"Focus", {nullptr, L"Concentration", L"Concentración", L"Fokus", L"Foco", L"Concentrazione", L"Фокус", L"Odak", L"फ़ोकस", L"专注", L"集中", L"집중", L"Skupienie"}},
+        {L"Break", {nullptr, L"Pause", L"Descanso", L"Pause", L"Pausa", L"Pausa", L"Перерыв", L"Mola", L"विराम", L"休息", L"休憩", L"휴식", L"Pauza"}},
+        {L"Unknown", {nullptr, L"Inconnu", L"Desconocido", L"Unbekannt", L"Desconhecido", L"Sconosciuto", L"Неизвестно", L"Bilinmiyor", L"अज्ञात", L"未知", L"不明", L"알 수 없음", L"Nieznany"}},
+        {L"Loading...", {nullptr, L"Chargement...", L"Cargando...", L"Wird geladen...", L"Carregando...", L"Caricamento...", L"Загрузка...", L"Yükleniyor...", L"लोड हो रहा है...", L"加载中...", L"読み込み中...", L"불러오는 중...", L"Ładowanie..."}},
+        {L"Locating...", {nullptr, L"Localisation...", L"Ubicando...", L"Standort...", L"Localizando...", L"Localizzazione...", L"Определение...", L"Konum...", L"स्थान...", L"定位中...", L"位置情報...", L"위치 확인 중...", L"Lokalizowanie..."}},
+        {L"Wind", {nullptr, L"Vent", L"Viento", L"Wind", L"Vento", L"Vento", L"Ветер", L"Rüzgar", L"हवा", L"风速", L"風", L"바람", L"Wiatr"}},
+        {L"Feels Like", {nullptr, L"Ressenti", L"Sensación", L"Gefühlt", L"Sensação", L"Percepita", L"Ощущается", L"Hissedilen", L"महसूस", L"体感", L"体感", L"체감", L"Odczuwalne"}},
+        {L"Humidity", {nullptr, L"Humidité", L"Humedad", L"Luftfeuchte", L"Umidade", L"Umidità", L"Влажность", L"Nem", L"नमी", L"湿度", L"湿度", L"습도", L"Wilgotność"}},
+        {L"Drag files here", {nullptr, L"Déposez des fichiers ici", L"Arrastra archivos aquí", L"Dateien hierher ziehen", L"Arraste arquivos aqui", L"Trascina i file qui", L"Перетащите файлы сюда", L"Dosyaları buraya sürükleyin", L"फ़ाइलें यहाँ खींचें", L"将文件拖到此处", L"ここにファイルをドラッグ", L"여기에 파일을 끌어다 놓으세요", L"Przeciągnij pliki tutaj"}},
+        {L"No devices", {nullptr, L"Aucun appareil", L"Sin dispositivos", L"Keine Geräte", L"Nenhum dispositivo", L"Nessun dispositivo", L"Нет устройств", L"Cihaz yok", L"कोई डिवाइस नहीं", L"无设备", L"デバイスなし", L"장치 없음", L"Brak urządzeń"}},
+        {L"item", {nullptr, L"élément", L"elemento", L"Element", L"item", L"elemento", L"элемент", L"öğe", L"आइटम", L"项", L"項目", L"항목", L"Element"}},
+        {L"items", {nullptr, L"éléments", L"elementos", L"Elemente", L"itens", L"elementi", L"элементов", L"öğe", L"आइटम", L"项", L"項目", L"항목", L"Elementy"}},
     };
 
     const int langIndex = g_uiLanguage.load(std::memory_order_relaxed);
@@ -6369,25 +6374,25 @@ void ShowContextMenu(HWND hwnd, POINT screenPoint) {
     }
 
     HMENU menu = CreatePopupMenu();
-    AppendMenuW(menu, MF_STRING, 40, g_manuallyHidden.load() ? L"Show Island" : L"Hide Island");
-    AppendMenuW(menu, MF_STRING, 1, L"Dismiss");
+    AppendMenuW(menu, MF_STRING, 40, g_manuallyHidden.load() ? L"Pokaż Dynamic Island" : L"Ukryj Dynamic Island");
+    AppendMenuW(menu, MF_STRING, 1, L"Odrzuć");
 
     HMENU timerMenu = CreatePopupMenu();
-    AppendMenuW(timerMenu, MF_STRING, 30, L"Start 25 min Focus");
-    AppendMenuW(timerMenu, MF_STRING, 31, L"Start 50 min Focus");
-    AppendMenuW(timerMenu, MF_STRING, 32, L"Start 5 min Break");
+    AppendMenuW(timerMenu, MF_STRING, 30, L"Start 25 min Trybu skupienia");
+    AppendMenuW(timerMenu, MF_STRING, 31, L"Start 50 min Trybu skupienia");
+    AppendMenuW(timerMenu, MF_STRING, 32, L"Start 5 min Przerwy");
     if (timerActive) {
-        AppendMenuW(timerMenu, MF_STRING, 33, timerRunning ? L"Pause Timer" : L"Resume Timer");
-        AppendMenuW(timerMenu, MF_STRING, 34, L"Stop Timer");
+        AppendMenuW(timerMenu, MF_STRING, 33, timerRunning ? L"Zapałzuj Timer" : L"Wznów Timer");
+        AppendMenuW(timerMenu, MF_STRING, 34, L"Zatrzymaj Timer");
     }
-    AppendMenuW(menu, MF_POPUP, reinterpret_cast<UINT_PTR>(timerMenu), L"Focus Timer");
+    AppendMenuW(menu, MF_POPUP, reinterpret_cast<UINT_PTR>(timerMenu), L"Timer trybu skupienia");
     if (g_settings.fileTrayModule) {
         size_t trayCount = 0;
         {
             std::lock_guard lock(g_stateMutex);
             trayCount = g_state.fileTrayItems.size();
         }
-        std::wstring label = std::wstring(Loc(L"File Tray")) + L": ";
+        std::wstring label = std::wstring(Loc(L"Zasobnik plików")) + L": ";
         if (trayCount == 0) {
             label += L"—";
             AppendMenuW(menu, MF_STRING | MF_GRAYED | MF_DISABLED, 41, label.c_str());
@@ -6396,31 +6401,31 @@ void ShowContextMenu(HWND hwnd, POINT screenPoint) {
             AppendMenuW(menu, MF_STRING, 41, label.c_str());
         }
     }
-    AppendMenuW(menu, MF_STRING, 2, L"Pin expanded");
-    AppendMenuW(menu, MF_STRING, 3, Wh_GetIntValue(L"GameOverlayPinned", 0) ? L"Hide game overlay" : L"Show game overlay");
+    AppendMenuW(menu, MF_STRING, 2, L"Przypnij rozwinięty");
+    AppendMenuW(menu, MF_STRING, 3, Wh_GetIntValue(L"GameOverlayPinned", 0) ? L"Zchowaj game overlay" : L"Pokaż game overlay");
     std::wstring shapeStr = GetStringSettingCopy(L"Appearance.ShapeStyle");
     const int activeW11 = Wh_GetIntValue(L"W11StyleOverride", -1) >= 0
                           ? Wh_GetIntValue(L"W11StyleOverride", 0)
                           : EqualsNoCase(shapeStr, L"w11");
-    AppendMenuW(menu, MF_STRING, 10, activeW11 ? L"Use iPhone Pill Style" : L"Use Windows 11 Flyout Style");
+    AppendMenuW(menu, MF_STRING, 10, activeW11 ? L"Użyj stylu iPhone Pill" : L"Użyj Flyout'u stylu Windowsa 11");
     const int activeNotch = Wh_GetIntValue(L"NotchStyleOverride", -1) >= 0
                           ? Wh_GetIntValue(L"NotchStyleOverride", 0)
                           : EqualsNoCase(shapeStr, L"notch");
     if (IsBottomPosition(g_settings.position)) {
-        AppendMenuW(menu, MF_STRING | MF_GRAYED | MF_DISABLED, 12, L"macOS Notch (Unavailable at Bottom)");
+        AppendMenuW(menu, MF_STRING | MF_GRAYED | MF_DISABLED, 12, L"macOS Notch (Niedostępny na dole ekranu)");
     } else {
-        AppendMenuW(menu, MF_STRING, 12, activeNotch ? L"Disable macOS Notch Style" : L"Use macOS Notch Style");
+        AppendMenuW(menu, MF_STRING, 12, activeNotch ? L"Wyłącz styl Notcha z MacOS'a" : L"Użyj stylu Notcha z MacOS'a");
     }
     const int activeExpandOnHover = Wh_GetIntValue(L"ExpandOnHoverOverride", -1) >= 0
                           ? Wh_GetIntValue(L"ExpandOnHoverOverride", 0)
                           : (Wh_GetIntSetting(L"Behavior.ExpandOnHover") != 0);
-    AppendMenuW(menu, MF_STRING, 11, activeExpandOnHover ? L"Expand on Click" : L"Expand on Hover");
+    AppendMenuW(menu, MF_STRING, 11, activeExpandOnHover ? L"Rozwiń przy kliknięciu" : L"Rozwiń po najechaniu");
     AppendMenuW(menu, MF_SEPARATOR, 0, nullptr);
-    AppendMenuW(menu, MF_STRING, 4, L"Transparency 100%");
-    AppendMenuW(menu, MF_STRING, 5, L"Transparency 85%");
-    AppendMenuW(menu, MF_STRING, 6, L"Transparency 70%");
-    AppendMenuW(menu, MF_STRING, 7, L"Transparency 55%");
-    AppendMenuW(menu, MF_STRING, 8, L"Reset transparency");
+    AppendMenuW(menu, MF_STRING, 4, L"Przezroczystość 100%");
+    AppendMenuW(menu, MF_STRING, 5, L"Przezroczystosć 85%");
+    AppendMenuW(menu, MF_STRING, 6, L"Przezroczystość 70%");
+    AppendMenuW(menu, MF_STRING, 7, L"Przezroczystość 55%");
+    AppendMenuW(menu, MF_STRING, 8, L"Zresetuj przezroczystość");
     AppendMenuW(menu, MF_SEPARATOR, 0, nullptr);
     // Color theme presets. Built from kThemePalettes and nested in a submenu:
     // nine palettes listed flat would dominate the root menu.
@@ -6432,10 +6437,10 @@ void ShowContextMenu(HWND hwnd, POINT screenPoint) {
     }
     AppendMenuW(themeMenu, MF_SEPARATOR, 0, nullptr);
     AppendMenuW(themeMenu, MF_STRING | (activeTheme >= kCustomThemeIndex ? MF_CHECKED : 0),
-                kThemeMenuIdBase + static_cast<UINT>(kCustomThemeIndex), L"Custom Colors");
-    AppendMenuW(menu, MF_POPUP, reinterpret_cast<UINT_PTR>(themeMenu), L"Theme");
+                kThemeMenuIdBase + static_cast<UINT>(kCustomThemeIndex), L"Kolory niestandardowe");
+    AppendMenuW(menu, MF_POPUP, reinterpret_cast<UINT_PTR>(themeMenu), L"Motyw");
     AppendMenuW(menu, MF_SEPARATOR, 0, nullptr);
-    AppendMenuW(menu, MF_STRING, 9, L"Open Windhawk settings");
+    AppendMenuW(menu, MF_STRING, 9, L"Otwórz ustawienia Windhawka");
 
     SetForegroundWindow(hwnd);
     const UINT cmd = TrackPopupMenu(menu, TPM_RETURNCMD | TPM_RIGHTBUTTON,
